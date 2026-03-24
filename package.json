@@ -1,0 +1,82 @@
+{
+  "name": "openclaw-file-transfer-skill",
+  "version": "0.1.0",
+  "description": "Context-aware file transfer skill for OpenClaw ecosystem",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "test:e2e": "jest tests/e2e",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.js tests/**/*.js",
+    "lint:fix": "eslint src/**/*.js tests/**/*.js --fix",
+    "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.js\" \"tests/**/*.js\"",
+    "build": "npm run lint && npm run test",
+    "prepare": "husky install",
+    "docs": "jsdoc -c jsdoc.json",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "openclaw",
+    "file-transfer",
+    "chatbot",
+    "automation",
+    "skill",
+    "context-aware"
+  ],
+  "author": "Ghostwritten <ghostwritten01>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ghostwritten/openclaw-file-transfer-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ghostwritten/openclaw-file-transfer-skill/issues"
+  },
+  "homepage": "https://github.com/Ghostwritten/openclaw-file-transfer-skill#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@openclaw/sdk": "^1.0.0",
+    "dotenv": "^16.0.0",
+    "winston": "^3.11.0",
+    "joi": "^17.9.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.3.0",
+    "eslint": "^8.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.0",
+    "eslint-plugin-jest": "^27.0.0",
+    "prettier": "^3.0.0",
+    "nodemon": "^3.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.0",
+    "jsdoc": "^4.0.0",
+    "standard-version": "^9.5.0"
+  },
+  "peerDependencies": {
+    "openclaw": "^2026.3.0"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "SKILL.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

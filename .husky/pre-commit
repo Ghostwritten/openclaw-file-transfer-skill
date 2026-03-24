@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# Run lint-staged
+npx lint-staged
+
+# Run tests if there are changes in src/ or tests/
+if git diff --cached --name-only | grep -E 'src/|tests/' > /dev/null; then
+  echo "🧪 Running tests for changed files..."
+  npm test -- --passWithNoTests
+fi
