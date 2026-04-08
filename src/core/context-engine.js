@@ -336,7 +336,7 @@ export class ContextEngine {
    */
   getStatus() {
     return {
-      version: '1.0.0',
+      version: '0.2.0-beta',
       config: this.config,
       scenarios: Object.keys(this.scenarioRules),
       fileTypes: Object.keys(this.fileTypeToScenario),

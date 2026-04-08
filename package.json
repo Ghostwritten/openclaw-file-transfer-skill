@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "test:unit": "jest tests/unit",
     "test:integration": "jest tests/integration",
     "test:e2e": "jest tests/e2e",
@@ -17,7 +17,7 @@
     "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
     "format:check": "prettier --check \"src/**/*.js\" \"tests/**/*.js\"",
     "build": "npm run lint && npm run test",
-    "prepare": "husky install",
+    "prepare": "husky install || true",
     "docs": "jsdoc -c jsdoc.json",
     "release": "standard-version"
   },
@@ -33,22 +33,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ghostwritten/openclaw-file-transfer-skill.git"
+    "url": "https://github.com/Ghostwritten/file-transfer.git"
   },
   "bugs": {
-    "url": "https://github.com/Ghostwritten/openclaw-file-transfer-skill/issues"
+    "url": "https://github.com/Ghostwritten/file-transfer/issues"
   },
-  "homepage": "https://github.com/Ghostwritten/openclaw-file-transfer-skill#readme",
+  "homepage": "https://github.com/Ghostwritten/file-transfer#readme",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
   "dependencies": {
-    "dotenv": "^16.0.0",
-    "winston": "^3.11.0",
-    "joi": "^17.9.0",
-    "lodash": "^4.17.21",
-    "moment": "^2.29.4",
     "mime-types": "^2.1.35"
   },
   "devDependencies": {

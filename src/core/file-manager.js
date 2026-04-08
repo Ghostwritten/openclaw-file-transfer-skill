@@ -9,6 +9,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import mime from 'mime-types';
+import { formatBytes } from '../utils/format.js';
 
 /**
  * 文件管理器
@@ -217,18 +218,12 @@ export class FileManager {
 
   /**
    * 格式化字节大小
-   * @private
+   * @param {number} bytes - 字节数
+   * @param {number} [decimals=2] - 小数位数
+   * @returns {string}
    */
   formatBytes(bytes, decimals = 2) {
-    if (bytes === 0) return '0 Bytes';
-    
-    const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-    
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    return formatBytes(bytes, decimals);
   }
 
   /**
@@ -237,7 +232,7 @@ export class FileManager {
    */
   getStatus() {
     return {
-      version: '1.0.0',
+      version: '0.2.0-beta',
       config: {
         maxFileSize: this.config.maxFileSize,
         chunkSize: this.config.chunkSize,

@@ -30,6 +30,5 @@ export default {
   clearMocks: true,
   resetMocks: true,
   restoreMocks: true,
-  transform: {},
-  extensionsToTreatAsEsm: ['.js']
+  transform: {}
 };
